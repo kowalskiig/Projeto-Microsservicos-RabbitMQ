@@ -102,15 +102,6 @@ docker compose up -d --build
 
 - Este repositório tem poucos commits pois os serviços foram desenvolvidos separadamente e reunidos aqui apenas para facilitar o teste da aplicação.
 ---
-## Projeto como uma vaga
-
-**Descrição da vaga (simulação):**  
-> Buscamos desenvolvedor Java com experiência em microsserviços, mensageria com RabbitMQ e boas práticas de código limpo.
-
-**Minha entrega:**  
-Implementei um sistema de análise de crédito com arquitetura de microsserviços, comunicação assíncrona via RabbitMQ, resiliência com configuração programática, uso de Docker para orquestração e aplicação do Strategy Pattern para cálculo de score.
-
----
 
 🔥 Esse projeto marcou meu primeiro contato real com **microsserviços**.  
 O próximo passo será construir uma solução **100% do zero, mais robusta e escalável**.
