@@ -60,9 +60,7 @@ flowchart LR
 - Conceitos filas, exchanges, consumers ✔️
 - Diferença de monolitico e arquitetura de microsserviços ✔️
 - Configuração de resiliência e desacoplamento via mensageria ✔️
-- Testes de integração com filas ✔️
 - Segurança entre serviços ✔️
-- Estratégias de escalabilidade ✔️ 
 
 ---
 
