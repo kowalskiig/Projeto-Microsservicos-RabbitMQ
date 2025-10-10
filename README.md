@@ -47,9 +47,7 @@ flowchart LR
 ## Tecnologias Utilizadas
 
 - Java 21  
-- Spring Boot (JPA, Web, Security)  
-- Spring Cloud Netflix (Config Server, Discovery, Gateway)  
-- Spring Cloud OpenFeign  
+- Spring Boot (JPA, Web)  
 - RabbitMQ  
 - PostgreSQL  
 - Docker  
