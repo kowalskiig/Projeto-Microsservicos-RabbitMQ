@@ -1,19 +1,10 @@
-# CreditCheck- Microsserviços com RabbitMQ
+# Microsservios com RabbitMQ - Analisando seu crédito para empréstimo
 
-Sistema de análise de crédito com arquitetura de microsserviços. A comunicação entre os serviços é feita de forma assíncrona via RabbitMQ, garantindo desacoplamento, resiliência e escalabilidade.  
+## Motivações do projeto
 
-[![My Skills](https://skillicons.dev/icons?i=java,spring,postgres,rabbitmq)](https://skillicons.dev)
-
-
-## 🔄 Arquitetura do Sistema
-```mermaid
-flowchart LR
-    A[Serviço de Propostas] -->|Exchange Proposta Pendente| B((Fila Propostas Pendentes))
-    B --> C[Serviço de Análise]
-    C -->|Exchange Proposta Completa| D((Fila Propostas Completas))
-    D --> A
-    A --> E[(Banco de Dados)]
-```
+- Esse projeto foi construido em um treinamento de Spring Boot + RabbitMQ.
+- A ideia principal foi entender como funcionam arquitetura distribuidas e suas vantagens em relação as monoliticas.
+- E implementar na prática um sistema para analisar créditos de clientes para um possivel empréstimo de forma totalmente assíncrona entre os serviços.
 
 ## Funcionalidades
 
@@ -25,55 +16,44 @@ flowchart LR
 
 ---
 
-## Endpoints
-
-| Método | Endpoint     | Ação                                 |
-|--------|--------------|--------------------------------------|
-| POST   | `/propostas` | Criar uma nova proposta de crédito   |
-| GET    | `/propostas` | Listar todas as propostas cadastradas |
-
 ---
 
-## Decisões Arquiteturais
+## Fluxo do sistema
 
-- Microsserviços para praticar escalabilidade e baixo acoplamento  
-- RabbitMQ como broker para comunicação assíncrona  
-- Docker para orquestração dos ambientes  
-- Pattern Strategy aplicado nas regras de score  
-- Configuração programática de queues, exchanges e bindings  
+```mermaid
+flowchart LR
+    A[Serviço de Propostas] -->|Exchange Proposta Pendente| B((Fila Propostas Pendentes))
+    B --> C[Serviço de Análise]
+    C -->|Exchange Proposta Completa| D((Fila Propostas Completas))
+    D --> A
+    A --> E[(Banco de Dados)]
+```
 
 ---
 
 ## Tecnologias Utilizadas
 
 - Java 21  
-- Spring Boot (JPA, Web)  
+- Spring Boot
 - RabbitMQ  
 - PostgreSQL  
 - Docker  
 
 ---
 
-## Aprendizados
-- Conceitos filas, exchanges, consumers ✔️
-- Diferença de monolitico e arquitetura de microsserviços ✔️
-- Configuração de resiliência e desacoplamento via mensageria ✔️
-- Segurança entre serviços ✔️
+## Minhas principais implementações e aprendizados nesse projeto
+- Aprendi conceitos como filas, exchanges, consumers e como eles se comportam com o message broker RabbitMQ.
+- Entendi a diferença de monolitico e arquitetura de microsserviços, e as motivações de quando escolher um ou outro.
+- Implementei resiliência com um status na entidade e utilizando a anotação @Scheduler para garantir que os dados fossem processados.
+- Configuração e comunicação entre os serviços em uma aplicação Spring Boot
 
 ---
 
-## Execução Local
+## Caso queira testar o projeto
 
 ### Requisitos
-
-<p align="left">
-  <a href="https://www.docker.com/">
-    <img src="https://www.vectorlogo.zone/logos/docker/docker-official.svg" alt="Docker" width="60" height="60"/>
-  </a>
-  <a href="https://www.postman.com/">
-    <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" width="60" height="60"/>
-  </a>
-</p>
+- Docker
+- Postman
 
 ```bash
 # Clone o repositório
@@ -84,28 +64,33 @@ cd CreditCheckAPI
 docker compose up -d --build
 ```
 
-## ⚙️ Teste a aplicação
+#### Testes via Postman
 
 
 ### 1️⃣ Via Postman Collection
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://nawszera.postman.co/workspace/nawszera's-Workspace~ea6779bc-203d-4c77-8395-e87a3f1091fa/request/45108000-ac49d0f5-af68-43ff-bdeb-6e6618b4cc11?action=share&creator=45108000&ctx=documentation&active-environment=45108000-ee357952-f911-405a-9337-066beac8e080)
 
 
-## Serviços Separados:
+---
+
+- Os serviços foram desenvolvidos em repositórios diferentes e juntei nesse aqui.
+
+### Caso queira, veja os serviços separados
 
 - [Serviço de Propostas](https://github.com/gustavokowallski/Proposta-app-)  
 - [Serviço de Análise de Crédito](https://github.com/gustavokowallski/Analise-credito-app)  
 
-- Este repositório tem poucos commits pois os serviços foram desenvolvidos separadamente e reunidos aqui apenas para facilitar o teste da aplicação.
+
 ---
 
-🔥 Esse projeto marcou meu primeiro contato real com **microsserviços**.  
-O próximo passo será construir uma solução **100% do zero, mais robusta e escalável**.
+### Visão geral do projeto:
 
-## Licença
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes. <p>📬 Conecte-se comigo 
-  <a href="https://www.linkedin.com/in/gustavokowalski/" target="_blank">LinkedIn</a> | 
-  <a href="mailto:kkowalskigustavo@gmail.com">Email</a>
-</p>
+- Meu primeiro contato com Microsserviços e Mensageria.
+- Projeto importante para entender a implementação e principalmente conceitos, permitindo atuar em equipes e aprender mais no dia a dia.
+
+<p>
+  <a href="https://www.linkedin.com/in/gustavokowalski/" target="_blank" style="margin-right: 20px;">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
 
 
