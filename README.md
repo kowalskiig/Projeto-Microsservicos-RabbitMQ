@@ -16,7 +16,6 @@
 
 ---
 
----
 
 ## Fluxo do sistema
 
@@ -47,7 +46,6 @@ flowchart LR
 - Implementei resiliência com um status na entidade e utilizando a anotação @Scheduler para garantir que os dados fossem processados.
 - Configuração e comunicação entre os serviços em uma aplicação Spring Boot
 
----
 
 ## Caso queira testar o projeto
 
@@ -73,12 +71,11 @@ docker compose up -d --build
 
 ---
 
-- Os serviços foram desenvolvidos em repositórios diferentes e juntei nesse aqui.
+### Os serviços foram desenvolvidos em repositórios diferentes e juntei nesse aqui.
 
-### Caso queira, veja os serviços separados
+- Caso queira, veja os serviços separados:
 
-- [Serviço de Propostas](https://github.com/gustavokowallski/Proposta-app-)  
-- [Serviço de Análise de Crédito](https://github.com/gustavokowallski/Analise-credito-app)  
+[Serviço de Propostas](https://github.com/gustavokowallski/Proposta-app-) | [Serviço de Análise de Crédito](https://github.com/gustavokowallski/Analise-credito-app)  
 
 
 ---
@@ -87,6 +84,7 @@ docker compose up -d --build
 
 - Meu primeiro contato com Microsserviços e Mensageria.
 - Projeto importante para entender a implementação e principalmente conceitos, permitindo atuar em equipes e aprender mais no dia a dia.
+- Atualmente estou aprendendo sobre Kafka e os conhecimentos adquiridos aqui estão me ajudando muito.
 
 <p>
   <a href="https://www.linkedin.com/in/gustavokowalski/" target="_blank" style="margin-right: 20px;">
