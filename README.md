@@ -1,4 +1,4 @@
-# Microsservios com RabbitMQ - Analisando seu crédito para empréstimo
+# Analisador de crédito
 
 ## Motivações do projeto
 
@@ -55,8 +55,9 @@ flowchart LR
 
 ```bash
 # Clone o repositório
-https://github.com/gustavokowallski/CreditCheckAPI.git
-cd CreditCheckAPI
+https://github.com/gustavokowallski/analisador-credito.git
+cd analisador-credito
+
 
 # Suba os containers
 docker compose up -d --build
